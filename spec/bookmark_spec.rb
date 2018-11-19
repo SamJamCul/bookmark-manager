@@ -3,7 +3,11 @@ require 'bookmark'
 describe Bookmark do
   describe '#all' do
     it 'returns an array of bookmarks' do
-      expect(Bookmark.all).to eq(['google.com', 'bing.com'])
+      bookmarks = Bookmark.all
+      
+      expect(bookmarks).to include("http://makers.tech")
+      expect(bookmarks).to include("http://www.destroyallsoftware.com")
+      expect(bookmarks).to include("http://www.google.com")
     end
   end
 end
